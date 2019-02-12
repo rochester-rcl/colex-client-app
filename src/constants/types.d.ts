@@ -1,5 +1,5 @@
 export interface IAction {
-    type: string
-};
+  type: string;
+}
 
-export interface IState {};
+export interface IState {}

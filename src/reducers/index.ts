@@ -1,12 +1,12 @@
-import { combineReducers } from 'redux';
-import wordReducer, { WordState } from './WordReducer';
+import { combineReducers } from "redux";
+import exampleReducer, { ExampleState } from "./ExampleReducer";
 
 export interface IAppState {
-    words: WordState
+  exampleState: ExampleState;
 }
 
 const appReducer = combineReducers<IAppState, any>({
-    words: wordReducer
+  exampleState: exampleReducer
 });
 
 export default appReducer;
