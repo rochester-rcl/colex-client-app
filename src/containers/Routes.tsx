@@ -1,12 +1,12 @@
 import React from "react";
 import { Router, Route } from "react-router-dom";
-import App from "./App";
+import TranslationsApp from "./Translations";
 import history from "../utils/history";
 
 const Routes = () => (
   <Router history={history}>
     <div className="app-container">
-      <Route exact path="/" component={App} />
+      <Route exact path="/" component={TranslationsApp} />
     </div>
   </Router>
 );

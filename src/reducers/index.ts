@@ -1,12 +1,12 @@
 import { combineReducers } from "redux";
-import exampleReducer, { ExampleState } from "./ExampleReducer";
+import translationReducer, { ITranslationState } from "./TranslationReducer";
 
 export interface IAppState {
-  exampleState: ExampleState;
+  translationState: ITranslationState;
 }
 
 const appReducer = combineReducers<IAppState, any>({
-  exampleState: exampleReducer
+  translationState: translationReducer
 });
 
 export default appReducer;
