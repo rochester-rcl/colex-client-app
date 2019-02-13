@@ -4,8 +4,10 @@ import { ITranslationData } from "../actions/TranslationActions";
 import { format } from 'url';
 
 export default class TranslationAPIService extends ColexAPIService {
-    backend = TRANSLATIONS_BACKEND;
+    private backend: string = TRANSLATIONS_BACKEND;
+    // TODO this is set to no-cors for now but we may need to look into what's going on on lddtech
+    private defaultParams: object = { method: 'GET' };
     getTranslations(params: object = {}): Promise<object | []> {
-        return this.get(this.backend, params);
+        return this.get(this.backend, {...this.defaultParams, ...params});
     }
 }

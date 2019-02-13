@@ -13,6 +13,7 @@ export function* loadTranslations(action: TranslationAction): Generator {
   try {
     // fetching would happen here
     const translations: object | [] = yield service.getTranslations();
+    console.log(translations);
     if (!translations) {
       const translationsErrorAction: TranslationAction = {
         type: TranslationActionConstants.TRANSLATIONS_ERROR,
