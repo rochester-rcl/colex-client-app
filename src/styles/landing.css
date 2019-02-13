@@ -1,0 +1,45 @@
+.colex-app-landing-container {
+    width: 100%;
+    height: 100%;
+    flex: 0.8;
+    display: flex;
+    justify-self: center; 
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 10vh;
+}
+
+.colex-app-tagline {
+    font-family: 'Roboto Condensed', sans-serif !important;
+    font-weight: 300 !important;
+    font-size: 2vw !important;
+    flex: 0.2;
+}
+
+/** Explore **/
+.colex-app-explore {
+    flex: 0.8;
+}
+
+.colex-app-explore-group {
+    justify-content: center;
+}
+
+/** Stats **/
+
+.colex-app-stats-container {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    flex: 0.1;
+    padding: 10px;
+    background: #ADF7B6;
+}
+
+/** Cards **/
+
+.colex-app-card-description {
+    font-family: 'Roboto Condensed', sans-serif !important;
+    font-weight: 300 !important;
+}

@@ -5,15 +5,33 @@ import {
   ITranslationData
 } from "../actions/TranslationActions";
 import TranslationAPIService from "../services/translation-api";
+import { IWordData } from "../actions/WordActions";
+import { ILanguageData } from "../actions/LanguageActions";
 
 const service: TranslationAPIService = new TranslationAPIService();
 
+// TODO while waiting for translation data here is a dummy one 
+const translation: ITranslationData = {
+  id: 1,
+  word: <IWordData> {
+    id: 1,
+    word: 'banana',
+    partOfSpeech: 'n',
+  },
+  language: <ILanguageData> {
+    id: 1,
+    language: 'english'
+  },
+  targetWord: 'banane',
+  sentence: 'I have a banana',
+  targetSentence: "J'ai une banane.",
+  accepted: true
+}
 
 export function* loadTranslations(action: TranslationAction): Generator {
   try {
     // fetching would happen here
     const translations: object | [] = yield service.getTranslations();
-    console.log(translations);
     if (!translations) {
       const translationsErrorAction: TranslationAction = {
         type: TranslationActionConstants.TRANSLATIONS_ERROR,
@@ -22,9 +40,10 @@ export function* loadTranslations(action: TranslationAction): Generator {
       }
       yield put(translationsErrorAction);
     } else {
+      // TODO change this when there are actually translations
       const loadedTranslationsAction: TranslationAction = {
         type: TranslationActionConstants.TRANSLATIONS_LOADED,
-        payload: { translations: <ITranslationData[]>translations }
+        payload: { translations: [translation] }
       };
       yield put(loadedTranslationsAction);
     }

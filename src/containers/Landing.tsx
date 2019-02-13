@@ -7,8 +7,26 @@ import {
   ITranslationData
 } from "../actions/TranslationActions";
 import { Segment, Loader, Header } from "semantic-ui-react";
+import Explore from '../components/Explore';
+import Stats, { IStat } from '../components/Stats';
 
-class TranslationsApp extends Component<{
+// TODO remove fake stats 
+const fakeStats: IStat[] = [
+  {
+    label: 'Contributors',
+    value: 323
+  },
+  {
+    label: 'Translations',
+    value: 1454
+  },
+  {
+    label: 'Languages',
+    value: 78
+  },
+]
+
+class Landing extends Component<{
   translations: ITranslationData[];
   error?: string;
   loadTranslations: () => void;
@@ -27,14 +45,18 @@ class TranslationsApp extends Component<{
       );
     } else {
       return (
-        <div className="colex-app-translations">
-          <Header className="colex-app-tagline">CoLex is a Translation App for Endangered Languages</Header>
-          <Segment className="colex-app-recent-translations">
-            <Header className="colex-app-header" id="colex-app-recent-translations-header">Recent Translations:</Header>
+        <div className="colex-app-landing-container">
+          <Header className="colex-app-tagline">The Community Language Portal tagline goes here</Header>
+          <div className="colex-app-explore">
+            <Explore />
+            {/*<Header className="colex-app-header" id="colex-app-recent-translations-header">Recent Translations:</Header>
             {translations.map((translation: ITranslationData, index: number) => {
               return <Header key={index}>{translation.word.word}</Header>;
-            })}
-          </Segment>
+            })*/}
+          </div>
+          <div className="colex-app-stats-container">
+            <Stats list={fakeStats} />
+          </div>
         </div>
       );
     }
@@ -57,4 +79,4 @@ const mapActionCreatorsToProps = (dispatch: Dispatch) => {
 export default connect(
   mapStateToProps,
   mapActionCreatorsToProps
-)(TranslationsApp);
+)(Landing);
