@@ -18,16 +18,12 @@
     cursor: pointer;
 }
 
-.colex-app-card {
-    min-height: 314px;
+.colex-app-explore-group-button:hover {
+    color: #ccc !important;
 }
 
-.colex-app-card .animating {
-    justify-content: center;
-    align-items: center;
-    flex: 0.5;
-    display: flex;
-    flex-direction: column;
+.colex-app-card {
+    min-height: 314px;
 }
 
 /** Tagline **/
