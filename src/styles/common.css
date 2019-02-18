@@ -18,12 +18,12 @@
     display: flex;
     width: 100%;
     flex: 0.1;
-    background: #122C34;
+    background: #333138;
 }
 
 .colex-app-text {
     font-family: 'Roboto Condensed', sans-serif !important;
-    font-weight: 300 !important;
+    font-weight: 400 !important;
 }
 
 .colex-app-nav-menu {
@@ -38,22 +38,40 @@
 }
 
 .colex-app-nav-menu .item:hover {
-    color: #ADF7B6 !important;
+    color: #f46cff !important;
 }
 
 .colex-app-nav-header {
     font-family: 'Roboto Condensed', sans-serif !important;
-    font-weight: 300 !important;
+    font-weight: 400 !important;
     font-size: 2vw !important;
 }
 
 .colex-app-header {
     font-family: 'Roboto Condensed', sans-serif !important;
-    font-weight: 300 !important;
+    font-weight: 400 !important;
     font-size: 2vw !important;
 }
 
 /** Buttons **/
 .colex-app-button {
-    background: #ADF7B6 !important;
+    color: #fff !important;
+    background: #f46cff !important;
+}
+
+/** Footer **/
+.colex-app-footer {
+    width: 100%;
+    border-top: 1px solid #ebebeb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.colex-app-footer-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
 }

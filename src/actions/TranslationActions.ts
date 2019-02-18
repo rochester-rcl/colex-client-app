@@ -11,13 +11,14 @@ export interface TranslationAction extends IAction {
 
 export interface ITranslationData {
   id: number;
-  user?: IUserData;
+  user: IUserData;
   word: IWordData;
   language: ILanguageData;
   targetWord: string;
   sentence: string;
   targetSentence: string;
   accepted: boolean;
+  submissionTime: string;
 }
 
 export enum TranslationActionConstants {

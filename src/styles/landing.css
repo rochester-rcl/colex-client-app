@@ -6,20 +6,14 @@
     justify-self: center; 
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
-    margin-top: 10vh;
-}
-
-.colex-app-tagline {
-    font-family: 'Roboto Condensed', sans-serif !important;
-    font-weight: 300 !important;
-    font-size: 2vw !important;
-    flex: 0.2;
+    flex-grow: 1;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 1)), url('../images/landing-background.png') no-repeat center center;
+    background-size: cover;
 }
 
 /** Explore **/
 .colex-app-explore {
-    flex: 0.8;
+    flex: 0.6;
 }
 
 .colex-app-explore-group {
@@ -31,15 +25,20 @@
 .colex-app-stats-container {
     width: 100%;
     height: 100%;
-    text-align: center;
     flex: 0.1;
-    padding: 10px;
-    background: #ADF7B6;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.colex-app-stat .colex-app-text {
+    color: #fff !important;
 }
 
 /** Cards **/
 
 .colex-app-card-description {
     font-family: 'Roboto Condensed', sans-serif !important;
-    font-weight: 300 !important;
+    font-weight: 400 !important;
 }

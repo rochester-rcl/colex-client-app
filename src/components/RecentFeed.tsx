@@ -1,6 +1,5 @@
 import React, { Component, SFC } from "react";
 import { Feed, Icon } from "semantic-ui-react";
-
 export interface IFeedItem {
   date: string;
   summary: string;

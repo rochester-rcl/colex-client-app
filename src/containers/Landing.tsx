@@ -46,13 +46,9 @@ class Landing extends Component<{
     } else {
       return (
         <div className="colex-app-landing-container">
-          <Header className="colex-app-tagline">The Community Language Portal tagline goes here</Header>
           <div className="colex-app-explore">
-            <Explore />
-            {/*<Header className="colex-app-header" id="colex-app-recent-translations-header">Recent Translations:</Header>
-            {translations.map((translation: ITranslationData, index: number) => {
-              return <Header key={index}>{translation.word.word}</Header>;
-            })*/}
+            <Header className="colex-app-tagline">The Community Language Portal tagline goes here</Header>
+            <Explore dictionary={translations}/>
           </div>
           <div className="colex-app-stats-container">
             <Stats list={fakeStats} />
