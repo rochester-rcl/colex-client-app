@@ -2,6 +2,7 @@
 @import url('styles/translations.css');
 @import url('styles/landing.css');
 @import url('styles/explore.css');
+@import url('styles/dictionary.css');
 body {
   margin: 0;
   padding: 0;

@@ -38,8 +38,7 @@ export default class Explore extends Component<ExploreProps> {
           </Button>
           <Card.Header className="colex-app-header">Dictionaries</Card.Header>
           <Card.Meta className="colex-app-text">
-            A good description about the dictionaries, about one or two
-            sentences max.
+            Collaborative Construction of an Interactive Lexicon
           </Card.Meta>
         </Card.Content>
         <Card.Content extra className="colex-app-card-extra">
@@ -78,7 +77,7 @@ export default class Explore extends Component<ExploreProps> {
       ));
     return (
       <div className="colex-app-explore-group">
-          {cards[currentIndex]}
+        {cards[currentIndex]}
         <div className="colex-app-explore-group-buttons">{buttons}</div>
       </div>
     );

@@ -1,6 +1,7 @@
 import React from "react";
 import { Router, Route } from "react-router-dom";
 import Landing from "./Landing";
+import Dictionary from "./DictionaryContainer";
 import history from "../utils/history";
 import Navigation, { MenuLink } from "../components/Navigation";
 import Footer, { FooterLink } from "../components/Footer";
@@ -36,7 +37,7 @@ const Routes = () => (
     <div className="app-container">
       <Navigation title="CLP" links={links} />
       <Route exact path="/" component={Landing} />
-      
+      <Route exact path="/dictionary/:language" component={Dictionary} />
     </div>
   </Router>
 );
