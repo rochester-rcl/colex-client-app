@@ -1,8 +1,10 @@
 import React from "react";
-import { Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Landing from "./Landing";
 import Dictionary from "./DictionaryContainer";
+import DictionaryBrowseContainer from "./DictionaryBrowseContainer";
 import history from "../utils/history";
+import { BASENAME } from "../constants/backend";
 import Navigation, { MenuLink } from "../components/Navigation";
 import Footer, { FooterLink } from "../components/Footer";
 import { Image, Icon } from "semantic-ui-react";
@@ -33,10 +35,11 @@ const footerLinks: FooterLink[] = [
   }
 ];
 const Routes = () => (
-  <Router history={history}>
+  <Router basename={BASENAME}>
     <div className="app-container">
       <Navigation title="CLP" links={links} />
       <Route exact path="/" component={Landing} />
+      <Route exact path="/dictionaries" component={DictionaryBrowseContainer} />
       <Route exact path="/dictionary/:language" component={Dictionary} />
     </div>
   </Router>

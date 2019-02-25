@@ -3,6 +3,7 @@ import { ITranslationData } from "../actions/TranslationActions";
 import { Grid, Card, Button, Icon } from "semantic-ui-react";
 import { AUDIO_BACKEND } from "../constants/backend";
 import WaveSurferComponent from "./WaveSurferComponent";
+import { userInfo } from "os";
 interface DictionaryListProps {
   translations: ITranslationData[];
   language?: string;
@@ -24,8 +25,9 @@ class DictionaryDefinition extends Component<ITranslationData> {
       });
   }
   render() {
-    const { sentence, targetWord, targetSentence, id } = this.props;
+    const { sentence, targetWord, targetSentence, id, user, submissionTime } = this.props;
     const { play } = this.state;
+    console.log(this.props);
     return (
       <Card className="colex-app-card" id="colex-definition-card">
         <Card.Content className="colex-app-card-content">
@@ -43,6 +45,9 @@ class DictionaryDefinition extends Component<ITranslationData> {
         <Card.Content extra className="colex-app-card-extra">
           <Card.Meta className="colex-app-text colex-app-definition-text">{sentence}</Card.Meta>
           <Card.Meta className="colex-app-text colex-app-definition-text">{targetSentence}</Card.Meta>
+        </Card.Content>
+        <Card.Content extra className="colex-app-card-extra">
+          <Card.Meta className="colex-app-text colex-app-definition-text">Added by {user.name} on {submissionTime.split(' ')[0]}</Card.Meta>
         </Card.Content>
       </Card>
     );

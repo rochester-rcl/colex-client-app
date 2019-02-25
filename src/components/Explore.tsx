@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Card, Button, Icon, Transition, List } from "semantic-ui-react";
 import { ITranslationData } from "../actions/TranslationActions";
-import RecentFeed, { IFeedItem } from "./RecentFeed";
-import { formatTranslationsFeed } from "../utils/data-utils";
+import RecentFeed, { IFeedItem, formatTranslationsFeed } from "./RecentFeed";
+import history from "../utils/history";
 interface ExploreProps {
   dictionary: ITranslationData[];
   narratives?: object[];
@@ -21,6 +21,7 @@ export default class Explore extends Component<ExploreProps> {
       currentIndex: index
     });
   }
+
   render() {
     const { dictionary, narratives, media, region } = this.props;
     const { currentIndex } = this.state;
@@ -29,10 +30,12 @@ export default class Explore extends Component<ExploreProps> {
       <Card key={0} className="colex-app-card">
         <Card.Content className="colex-app-card-content">
           <Button
+            as="a"
             compact
             size="small"
             floated="right"
             className="colex-app-button"
+            href="dictionaries"
           >
             View
           </Button>

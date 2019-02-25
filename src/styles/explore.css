@@ -35,3 +35,8 @@
     color: #fff !important;
     flex: 0.5;
 }
+
+/** FEED **/
+.colex-app-recent-feed-summary a {
+    color: #4e0068 !important;
+}

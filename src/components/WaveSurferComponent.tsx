@@ -26,7 +26,6 @@ export default class WaveSurferComponent extends Component<IWaveSurferProps> {
 
   componentDidMount() {
     const { src, waveColor, progressColor } = this.props;
-    console.log(this.waveSurferContainer);
     this.waveSurfer = WaveSurfer.create({
       // @ts-ignore
       container: this.waveSurferContainer.current,
