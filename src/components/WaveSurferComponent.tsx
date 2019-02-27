@@ -6,6 +6,7 @@ interface IWaveSurferProps {
   waveColor: string;
   progressColor: string;
   play: boolean;
+  onFinishCallback?: () => void
 }
 
 export default class WaveSurferComponent extends Component<IWaveSurferProps> {
@@ -14,6 +15,7 @@ export default class WaveSurferComponent extends Component<IWaveSurferProps> {
   constructor(props: IWaveSurferProps) {
     super(props);
     this.playPause = this.playPause.bind(this);
+    this.handleCallback = this.handleCallback.bind(this);
   }
 
   playPause(play: boolean) {
@@ -21,6 +23,13 @@ export default class WaveSurferComponent extends Component<IWaveSurferProps> {
       this.waveSurfer.play();
     } else {
       this.waveSurfer.pause();
+    }
+  }
+
+  handleCallback(): void {
+    const { onFinishCallback } = this.props;
+    if (onFinishCallback) {
+      onFinishCallback();
     }
   }
 
@@ -36,8 +45,8 @@ export default class WaveSurferComponent extends Component<IWaveSurferProps> {
       responsive: true,
       scrollParent: false,
     });
-
     this.waveSurfer.load(src);
+    this.waveSurfer.on('finish', this.handleCallback);
   }
 
   componentDidUpdate(prevProps: IWaveSurferProps) {
@@ -48,6 +57,10 @@ export default class WaveSurferComponent extends Component<IWaveSurferProps> {
     if (play !== prevProps.play) {
       this.playPause(play);
     }
+  }
+
+  componentWillUnmount() {
+    this.waveSurfer.un('finish', this.handleCallback);
   }
 
   shouldComponentUpdate(

@@ -9,6 +9,8 @@ import Navigation, { MenuLink } from "../components/Navigation";
 import Footer, { FooterLink } from "../components/Footer";
 import { Image, Icon } from "semantic-ui-react";
 import urLogo from "../images/ur-logo.png";
+import NarrativeContainer from "./NarrativeContainer";
+import NarrativeBrowseContainer from "./NarrativeBrowseContainer";
 const links: MenuLink[] = [
   {
     name: 'about',
@@ -41,6 +43,8 @@ const Routes = () => (
       <Route exact path="/" component={Landing} />
       <Route exact path="/dictionaries" component={DictionaryBrowseContainer} />
       <Route exact path="/dictionary/:language" component={Dictionary} />
+      <Route exact path="/narratives" component={NarrativeBrowseContainer} />
+      <Route exact path="/narrative/:language" component={NarrativeContainer} />
     </div>
   </Router>
 );

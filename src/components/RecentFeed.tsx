@@ -45,7 +45,7 @@ const RecentFeed: FunctionComponent<FeedProps> = props => {
       {list.map((item: IFeedItem, index: number) => (
         <Feed.Event key={index}>
           <Feed.Label>
-            <Icon name="pencil" />
+            <Icon className="colex-app-recent-feed-icon" name="pencil" />
           </Feed.Label>
           <Feed.Content>
             <Feed.Date className="colex-app-text">{item.date}</Feed.Date>

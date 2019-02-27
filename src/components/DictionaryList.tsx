@@ -18,16 +18,23 @@ class DictionaryDefinition extends Component<ITranslationData> {
   constructor(props: ITranslationData) {
       super(props);
       this.playPause = this.playPause.bind(this);
+      this.resetPlayer = this.resetPlayer.bind(this);
   }
   playPause() {
       this.setState({
           play: !this.state.play
       });
   }
+
+  resetPlayer() {
+    this.setState({
+      play: false
+    });
+  }
+
   render() {
     const { sentence, targetWord, targetSentence, id, user, submissionTime } = this.props;
     const { play } = this.state;
-    console.log(this.props);
     return (
       <Card className="colex-app-card" id="colex-definition-card">
         <Card.Content className="colex-app-card-content">
@@ -36,11 +43,11 @@ class DictionaryDefinition extends Component<ITranslationData> {
             size="small"
             floated="right"
             className="colex-app-button"
-            icon="play"
+            icon={play ? "pause" : "play"}
             onClick={this.playPause}
           />
           <Card.Header className="colex-app-header">{targetWord}</Card.Header>
-          <WaveSurferComponent play={play} src={`${AUDIO_BACKEND}?trans_id=${id}`} waveColor='#333138' progressColor='purple' />
+          <WaveSurferComponent play={play} src={`${AUDIO_BACKEND}?trans_id=${id}`} waveColor='#333138' progressColor='purple' onFinishCallback={this.resetPlayer} />
         </Card.Content>
         <Card.Content extra className="colex-app-card-extra">
           <Card.Meta className="colex-app-text colex-app-definition-text">{sentence}</Card.Meta>
@@ -66,7 +73,7 @@ export default class DictionaryList extends Component<DictionaryListProps> {
     const { currentIndex } = this.state;
     return (
       <Grid className="colex-dictionary-list" relaxed="very" columns={2}>
-        <Grid.Column width={3} className="colex-dictionary-definitions">
+        <Grid.Column width={5} className="colex-dictionary-definitions">
           {translations.map((translation: ITranslationData, index: number) => (
             <div
               className="colex-dictionary-term colex-app-text"
@@ -79,7 +86,7 @@ export default class DictionaryList extends Component<DictionaryListProps> {
             </div>
           ))}
         </Grid.Column>
-        <Grid.Column width={12} className="colex-dictionary-definition">
+        <Grid.Column width={11} className="colex-dictionary-definition">
           <DictionaryDefinition {...translations[currentIndex]} />
         </Grid.Column>
       </Grid>

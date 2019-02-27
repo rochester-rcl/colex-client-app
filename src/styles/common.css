@@ -21,12 +21,15 @@
     width: 100%;
     flex: 0.1;
     background: #333138;
-    box-shadow: 0 10px 20px rgba(40,40,40,0.19), 0 16px 16px rgba(40,40,40,0.23) !important;
+    align-items: center;
+    box-shadow: 0 5px 40px rgba(40,40,40,0.19), 0 5px 40px rgba(40,40,40,0.23) !important;
 }
 
 .colex-app-text {
     font-family: 'Roboto Condensed', sans-serif !important;
     font-weight: 400 !important;
+    font-size: 1.4vw !important;
+    line-height: 1em;
 }
 
 .colex-app-nav-menu {
@@ -38,6 +41,7 @@
     font-family: 'Roboto Condensed', sans-serif !important;
     color: #fff !important;
     cursor: pointer;
+    font-size: 1.2vw;
 }
 
 .colex-app-nav-menu .item:hover {
@@ -60,9 +64,24 @@
 .colex-app-button {
     color: #fff !important;
     background: #4e0068 !important;
+    font-family: 'Roboto Condensed', sans-serif !important;
+    font-size: 1.2vw !important;
 }
 
-/** Cards **/
+/** CARDS **/
+
+.colex-app-card-description {
+    font-family: 'Roboto Condensed', sans-serif !important;
+    font-weight: 400 !important;
+}
+  
+.colex-app-card {
+    width: 90% !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: 0 10px 20px rgba(40,40,40,0.19), 0 16px 16px rgba(40,40,40,0.23) !important;
+}
+  
 
 /** Footer **/
 .colex-app-footer {
@@ -79,4 +98,9 @@
     justify-content: center;
     align-items: center;
     margin-top: 20px;
+}
+
+/** Links **/
+.colex-app-link {
+    color: #4e0068 !important;
 }
